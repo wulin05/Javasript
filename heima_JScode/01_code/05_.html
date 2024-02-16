@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let num = 10        //number
+        let str = '林武'    // string
+        let str1 = '10'    // string
+        let flag = true    // boolean
+        let un             // undefined  定义后未赋值,为undefined类型      
+        let obj = null     // object
+
+        // -----------------------------------------------------
+        // 检测数据类型 typeof
+        console.log(typeof num, typeof str, typeof str1, typeof flag, typeof un, typeof obj) 
+    
+        let num1 = prompt('请输入第一个数: ')
+        let num2 = prompt('请输入第二个数: ')
+        console.log(typeof num1)  // 表单、prompt输入的数据,都是string, 比如输入 10000,也是字符串
+        console.log(typeof num2)
+        //基于上述的原因,当从表单、prompt获取过来的数据默认是字符串类型，不能直接简单的进行加法运算
+        console.log(num1 + num2)     // 结果是 10000100 
+        console.log('10000' + '100') // 1000000就是字符串的拼接了
+
+        // --------------------------------------------------------
+        // 所以对于从表单、prompt获取过来的数值,想要相加,必须先进行类型转换
+        // 1. 隐式转换 "+号" : 缺点, 转换类型不明确,靠经验才能总结
+        console.log(1 + 1)      // 2
+        console.log('1' + 1)    // 11  ' + '号只要两边有一个是字符串,都会把另外一个转成字符串
+        console.log(2 - 2)      // 0
+        console.log(2 - '2')    // 0   除了+号以外,-号和*号会把数据转成数字类型,以及后面学到的比较运算符==,>=,<=,<,>,===也有隐式转换的功能
+        
+        // 这个是我添加的,后面学到比较运算符,我在这边做示例
+        console.log(2 == '2')  // true, ==有隐式转换的功能,所以 2 == '2'
+        console.log(2 == '3')   // false
+        console.log(2 === '2')  // false,'==='全等,判断值和数据类型都一样才是true
+        console.log(NaN === NaN)  // NaN不等于任何人,包括自己
+
+        console.log(+'123', typeof +'123')     // 123  但是单边 +号也有隐式转换数字的功能
+        console.log(+'11' + 11)  // 22
+
+        // 2. 显示转换: 隐式转换不严谨,但是某些时候比较简便
+        let Str = '123'
+        console.log(Number(Str))   // 123, 前提Str是字符串类型的数字
+        console.log(Number('linwu'))  // NaN, undefined
+
+        let Num = prompt('请输入您的基本工资: ')  // 3
+        let Num1 = prompt('请输入您的奖金: ')     // 4
+        console.log(Number(Num) + Number(Num1))  // 7
+
+        // ------------------------------------------------------
+        //有三种方式可以将字符串类型的数据 显示类型转换成 数字类型
+        /* 
+        Number(数据)：如果字符串内容里有非数字,转换失败时结果为NaN(Not a Number),即不是一个数字。NaN也是number类型的数据,代表非数字
+        parseInt(数据): 只保留整数
+        parseFloat(数据)：可以保留小数
+        */
+        let Num2 = Number(prompt('请输入您的存款:')) // 5
+        let Num3 = +prompt('请输入您的年薪: ')       // 6
+        console.log(Num2, typeof Num2)              // 5 Number
+        console.log(Num3, typeof Num3)              // 6 Number
+        
+        console.log(parseInt('12px'), typeof(parseInt('12px')))  // 12 Number, 由于原先是12px,不能对12px进行数字运算,进行parseInt转换后,就可以了 
+        console.log(parseInt('12.34px'))         //  12
+        console.log(parseInt('abc12.34px'))      // NaN
+
+        console.log(parseFloat('12.34px'))      // 12.34
+        console.log(parseFloat('abc12.34px'))   // NaN
+
+        // 小案例
+        // 用户输入: prompt 得到两个字符串类型的数字
+        // let var1 = prompt('请输入第一个数字:')   // 10
+        // let var2 = prompt('请输入第二个数字:')   // 20
+        // alert(var1 + var2)                     // 1020
+        // alert(+var1 + Number(var2))            // 30
+        
+        let var1 = +prompt('请输入第一个数字:')
+        let var2 = +prompt('请输入第二个数字:')
+        // 警示框输出: alert
+        alert(var1 + var2)                         // 30
+        alert(`两个数相加的和是: ${var1 + var2}`)   // 两个数相加的和是: 30
+ 
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let arr01 = []
+        console.log(arr01)       // []
+        console.log(arr01[0])    // undefined
+        console.log('---------------------------')
+        arr01[0] = 1
+        console.log(arr01[0])    // 1
+        console.log('---------------------------')
+        arr01[1] = [2]
+        console.log(arr01[1])    // [2]
+        console.log(arr01)       // [1,[2]]
+        console.log('---------------------------')
+
+        let arr02 = ['pink', 'green', 'red']
+        for (let i = 0; i < arr02.length; i++) {
+            arr02[i] = arr02[i] + '老师'
+        }
+        console.log(arr02)      // (3) ['pink老师', 'green老师', 'red老师']
+
+
+        console.log('---------------------------')
+        // 1. 数组新增元素： 数组.push()方法将一个或多个元素添加到数组的末尾, 并返回该数组的新长度(非常关键, 重点)
+        let arr03 = ['刘德华']
+        let res_01 = arr03.push('张学友')
+
+        console.log(`arr03.push('张学友')的返回值是: ${res_01}`)    // 2  ---> 数组长度
+        console.log(`数组arr03元素有: ${arr03}`)                //  数组arr03元素有: 刘德华,张学友
+
+        // 2. 数组新增元素: 数组.unshift(),与.push()类似,但是unshift()是添加到数组的开头,也返回数组的新长度。
+        let res_02 = arr03.unshift('superman')
+        console.log(res_02)                                    // 3
+        console.log(arr03)                                     // ['superman', '刘德华', '张学友']
+
+        // 3.拓展学习:
+        const vegetables = ["parsnip", "potato"]
+        const moreVegs = ["celery", "beetroot"]
+        // 合并第二个数组到第一个数组中
+        vegetables.push(...moreVegs)
+
+        console.log(vegetables)  // ['parsnip', 'potato', 'celery', 'beetroot']
+
+        // 4.关于 .concat() 的使用:
+        // (1)以下代码将两个数组合并为一个新数组：
+        const letters = ["a", "b", "c"];
+        const numbers = [1, 2, 3];
+
+        const alphaNumeric = letters.concat(numbers);
+        console.log(alphaNumeric);
+
+        // (2)以下代码合并数组并保留引用：
+        const num1 = [[1]];
+        const num2 = [2, [3]];
+
+        const Numbers = num1.concat(num2);
+
+        console.log(Numbers);
+        // [[1], 2, [3]]
+
+        // 修改 num1 的第一个元素
+        num1[0].push(4);
+
+        console.log(Numbers);
+        // [[1, 4], 2, [3]]
+
+
+
+    </script>
+
+</body>
+
+</html>

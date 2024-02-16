@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 匿名函数的"立即执行"使用场景......
+        // 作用: 避免变量污染。
+        // 写法1. (function(){})(), 先()();  “注意;要有”,再在第一个()中写匿名函数function(){},结果就是下面:
+        (function () {
+            let num = 10
+            let arr = []
+            console.log(num)
+        })();
+
+        (function () {
+            let num = 20
+            let arr = []
+            console.log(num)
+        })();
+
+        (function (x = 0, y = 0) {
+            console.log(x + y)
+        })(10, 20);
+
+        // 写法2. (function(){}());
+        (function (x = 0, y = 0) { console.log(x + y) }(10, 20));
+
+        // 备注: 非常常用,就比如文件中引入外部的函数,如果不使用这种方式,很容易因为引入的外部函数里定义的
+        // 变量和本文件中的变量重名,导致变量污染。
+        // 另外,我个人感觉这个不仅仅是匿名函数,具名函数也是一个道理:
+        // (function getSum(x=0, y=0){ return x + y })(10, 20);
+        // (function getSum(x=0, y=0){ return x + y }(10, 20));
+
+        // 记得,这是 "立即执行".......
+
+
+
+
+    </script>
+
+</body>
+
+</html>

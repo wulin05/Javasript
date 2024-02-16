@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. 逻辑中断(逻辑与 && 左边遇到假就中断,获取到值为假; 逻辑或 || 左边遇到真就中断,获取到值为真)
+        console.log(false && 22)
+        console.log(false && 3 + 5)
+        console.log('----------------------')
+        let age = 18
+        console.log(false && age++)   // false
+        console.log(age)    // age++ 不执行
+
+        console.log('----------------------')
+        console.log(1 || age++)   // 1
+        console.log(age)      // age++ 不执行
+
+        console.log('----------------------')
+        console.log(11 && 22)  // 都为真,则返回最后一个真值 22
+
+        console.log(11 || 22)  // 都为真,则返回第一个真值 11
+        console.log(false || 0)  // 都为假,则返回最后一个值 0
+
+        // 2. 上面的铺垫完后,介绍: ||逻辑或: "一真为真", 如果都是为假,则取最后的值'0',不是前面的NaN
+        function fn(x, y) {
+            x = x || 0   // fn(1, 2)的情况是x=1, y=2
+            y = y || 0   // fn()的情况是x=0, y=0
+            console.log(x + y)
+        }
+
+        fn(1, 2)
+        // fn(undefined, undefined) ---> x = undefined || 0 ---> x = 0 
+        // 同理 fn() ---> y = 0, 这样函数fn在声明的时候,可以不用给变量x,y赋初值了。
+        fn()
+
+        // 3. 示例
+        console.log('' && 20)  // ''
+        console.log(false && 20)  // false
+        console.log(5 < 3 && 20)  // false
+        console.log(undefined && 20)  // undefined
+        console.log(null && 20)  // null
+        console.log(0 && 20)  // 0
+        console.log(10 && 20)  // 20
+
+        console.log('' || 20)  // 20
+        console.log(false || 20)   // 20
+        console.log(5 < 3 || 20)   // 20
+        console.log(undefined || 20)   // 20
+        console.log(null || 20)   // 20
+        console.log(0 || 20)   // 20
+        console.log(10 || 20)   // 10.....
+
+    </script>
+
+</body>
+
+</html>

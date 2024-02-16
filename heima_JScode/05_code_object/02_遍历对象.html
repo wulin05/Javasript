@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let arr = ['pink', 'blue', 'green', 'yellow', 'red']
+        // 之前学的for(let i=0; i < 10; i++){}的方式遍历数组
+        // 也可以通过 , 但是不推荐使用这种方式遍历数组,原因在于:
+        for (let k in arr) {
+            console.log(k)      // k是数组的下标(索引号),但是类型是字符串。这就是不推荐使用的原因
+            console.log(arr[k])
+        }
+
+        console.log('============================================')
+        let obj = {
+            //对象的属性uname
+            uname: '刘德华',
+            age: 18,
+            gender: '男',
+            talent: 'actor',
+            'test-address': 'Hongkong'   // 类名、属性名、方法名同样遵循小驼峰规则
+        }
+        // 遍历对象
+        for (let k in obj) {
+            console.log(k)  // k是属性名: 'uname', 'age', 'gender',... k是字符串
+            // 记得吗,学python,遍历字典、对象是这样的格式: 字典/对象['属性名'],原因如下:
+            // console.log(obj.uname)  // 正确
+            // console.log(obj.k)      // 错误,因为k是字符串'uname'
+            // 上面写法等于: console.log(obj.'uname')
+            // 所以,我们是使用obj['uname']的方式获取到对象的 key=uname,对应的value='刘德华'
+            console.log(obj[k])
+        }
+
+        // 好好理解,之前的感觉是数组中存放的元素是一个个对象[obj1, obj2, obj3, ...., objN]
+        // 所以获取数组的每个元素后,对每个元素(对象)获取对象的属性值的话,记忆中是不是都是使用obj1['属性名'],
+        // 比如：obj1['uname'], obj1['age'], obj1['gender']......
+
+        // 为什么会有这种陌生感,因为之前接触的,获取对象的值直接就用 对象名.属性名,
+        //  对单个对象再用for..in.. 进行遍历,基本没这么做过......
+        // for(let k in obj){
+        //     console.log(obj[k])
+        // }
+
+        // 上案例
+        let students = [
+            { name: '刘德华', age: '55', gender: '男', hometown: '香港' },
+            { name: '刘亦菲', age: '30', gender: '女', hometown: '美国' },
+            { name: '周杰伦', age: '40', gender: '男', hometown: '台湾' },
+            { name: '木村拓哉', age: '50', gender: '男', hometown: '日本' },
+        ]
+        console.log('-------------------------------------------------------------')
+        for (let i = 0; i < students.length; i++) {
+            console.log(students[i])        // 打印出每一个对象
+            console.log(students[i].name)   // 打印出所有对象的name值
+            console.log(students[i].hometown)   // 打印出所有对象的hometown值
+        }
+
+        console.log('=============================================================')
+        // 不要搞混了哦，JavaScript和Python不一样哦.....
+        for (let k in students) {       // 注意哦,在python中这样, k的值是每一个对象,但是js是下标值
+            console.log(k)              // 0, 1, 2, 3
+            console.log(k.name)         // undefined
+            console.log(students[k].name)   // 这样才可以所有对象的name键对应的值value
+            console.log(k.hometown)     // undefined
+            console.log(students[k].hometown)   // 这样才可以,同理
+            // 所以,想获取每一个对象中的属性对应的值,那么
+        }
+
+    </script>
+
+</body>
+
+</html>

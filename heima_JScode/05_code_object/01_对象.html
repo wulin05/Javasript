@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 对象的声明
+        let obj01 = {}
+
+        let obj = {
+            //对象的属性uname
+            uname: '刘德华',
+            //对象的方法song：匿名函数的写法
+            song: function (x = 0, y = 0) {
+                // console.log('冰雨')
+                console.log(x + y)
+            },
+            dance: function () {
+                document.write('一起来跳舞~')
+            },
+        }
+
+        //方法的调用: 对象名.方法名
+        obj.song()
+        obj.song(1, 2)
+        obj.dance()
+
+        // 注意：由于obj.song(1, 2)没有返回值return,所以console.log()括号内是null值,console.log()最终的结果是undefined
+        console.log(obj.song(1, 2))
+    </script>
+
+</body>
+
+</html>

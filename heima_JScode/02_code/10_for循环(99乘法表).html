@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*  99乘法表的CSS样式  */
+        span {
+            display: inline-block;
+            width: 80px;
+            text-align: center;
+            padding: 5px 10px;
+            border: 1px solid pink;
+            margin: 2px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px rgba(255, 192, 203, .80);
+            background-color: rgba(255, 192, 203, .20);
+            /* color: hotpink;  字体颜色*/
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        // 遍历数组
+        let arr = ['刘德华', '张学友', '黎明', '郭富城', '谢霆锋', '陈冠希']
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i])
+        }
+
+        // 退出循环 continue
+        for (let j = 0; j < arr.length; j++) {
+            if (j === 3) {
+                continue
+            }
+            console.log(j)
+            document.write(arr[j])
+        }
+        document.write('<br>')
+
+        // 退出循环 break
+        for (let x = 0; x < arr.length; x++) {
+            if (x === 4) {
+                break    // break退出整个循环
+            }
+            console.log(x)
+            document.write(arr[x])
+            document.write('<br>')
+        }
+
+        // for无限循环
+        // for (; ;) {
+        //     console.log('无限循环')
+        // // }
+
+        // 打印倒三角形星星
+        // let row = prompt('请输入行数:')
+        // for (let y = 1; y <= row; y++) {
+        //     for (let z = 1; z <= y; z++) {
+        //         document.write('★')
+        //     }
+        //     document.write('<br>')
+        // }
+
+        // 99乘法表
+        for (let a = 1; a <= 9; a++) {
+            for (let b = 1; b <= a; b++) {
+                document.write(`<span>${b}*${a} = ${a * b}</span>`)
+            }
+            document.write('<br>')
+        }
+
+    </script>
+
+</body>
+
+</html>

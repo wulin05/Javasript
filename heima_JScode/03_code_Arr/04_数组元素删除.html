@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. pop() 方法从数组中删除最后一个元素，并返回该元素的值。此方法会更改数组的长度。
+        const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+
+        console.log(plants.pop());
+        // Expected output: "tomato"
+
+        console.log(plants);
+        // Expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+        plants.pop();
+
+        console.log(plants);
+        // Expected output: Array ["broccoli", "cauliflower", "cabbage"]
+
+        console.log('--------------------------------------------------------------')
+
+        // 2. shift() 方法从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。
+        const array1 = [1, 2, 3];
+
+        const firstElement = array1.shift();
+
+        console.log(array1);
+        // Expected output: Array [2, 3]
+
+        console.log(firstElement);
+        // Expected output: 1
+
+        console.log('--------------------------------------------------------------')
+
+        // 3. splice() 方法通过移除或者替换已存在的元素和/或添加新元素就地改变一个数组的内容。
+        const months = ['Jan', 'March', 'April', 'June'];
+
+        // months.splice(2, 1)  // splice(起始位置-索引号, 删除个数)
+        // console.log(months)
+
+        months.splice(2)    // 如果没有删除个数,那么从第二个元素开始,后续都被删除了
+        console.log(months)
+
+        // 下面两个示例,可以看出splice()不仅仅可以删除元素,也可以添加新元素。
+        // months.splice(1, 0, 'Feb');
+        // // Inserts at index 1
+        // console.log(months);
+        // // Expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+        // months.splice(4, 1, 'May');
+        // // Replaces 1 element at index 4
+        // console.log(months);
+        // // Expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+    </script>
+
+</body>
+
+</html>

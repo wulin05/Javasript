@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 变量案例 - 交换变量的值
+        // 核心思路: 使用一个临时变量, 用来做中间存储
+        // 步骤
+        // 1. 声明一个临时变量 temp
+        let temp
+        let num1 = 10
+        let num2 = 20
+
+        temp = num1
+        num1 = num2
+        num2 = temp
+
+        document.write(num1)
+        document.write('\n')
+        document.write(num2)
+    </script>
+</body>
+</html>

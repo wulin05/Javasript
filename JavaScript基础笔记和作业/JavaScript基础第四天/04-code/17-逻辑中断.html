@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function fn(x, y) {
+      x = x || 0
+      y = y || 0
+      console.log(x + y)
+    }
+    fn(1, 2)
+    // fn()
+
+    // console.log(false && 22)
+    // console.log(false && 3 + 5)
+    // let age = 18
+    // console.log(false && age++) // age++ 不执行  一假则假,则后面的不再计算
+    // console.log(age)   // age = 18
+
+    // console.log(true || age++)  // age++ 不执行 一真则真,输出第一个真值,后面的不再计算,但是如果都是假,则输出最后一个(假)值
+    // console.log(age)   // age = 18
+
+
+    // console.log(11 && 22)  // 逻辑与&& 都是真，则返回最后一个真值: 22
+    // console.log(11 || 22)  // 逻辑或|| 输出第一个真值: 11
+    console.log(false || 0 || 99)  // 控制台输出: 99
+    console.log(false || false || 0)  // 控制台输出：0
+    console.log(1 && 2 && 3 && 4 && 999)  // 控制台输出：999
+
+    // 不要去死记硬背, "逻辑中断" 的原理就是：记住 ||(一真则真) 和 &&(一假则假) 的特点：
+    // || 取到第一个真值,如果全部值都是假,则取 最后一个 假值
+    // && 取到第一个假值,如果全部值都是真,则取 最后一个 真值
+
+  </script>
+</body>
+
+</html>
